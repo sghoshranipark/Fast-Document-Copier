@@ -1,0 +1,10 @@
+C:\Users\Soumyadeep Ghosh\Google Drive\Fast Document Copier\Fast Document Copier\bin\Debug\Fast Document Copier.exe.config
+C:\Users\Soumyadeep Ghosh\Google Drive\Fast Document Copier\Fast Document Copier\bin\Debug\Fast Document Copier.exe
+C:\Users\Soumyadeep Ghosh\Google Drive\Fast Document Copier\Fast Document Copier\bin\Debug\Fast Document Copier.pdb
+C:\Users\Soumyadeep Ghosh\Google Drive\Fast Document Copier\Fast Document Copier\obj\Debug\Fast Document Copier.csprojResolveAssemblyReference.cache
+C:\Users\Soumyadeep Ghosh\Google Drive\Fast Document Copier\Fast Document Copier\obj\Debug\Fast_Document_Copier.Form1.resources
+C:\Users\Soumyadeep Ghosh\Google Drive\Fast Document Copier\Fast Document Copier\obj\Debug\Fast_Document_Copier.Properties.Resources.resources
+C:\Users\Soumyadeep Ghosh\Google Drive\Fast Document Copier\Fast Document Copier\obj\Debug\Fast Document Copier.csproj.GenerateResource.Cache
+C:\Users\Soumyadeep Ghosh\Google Drive\Fast Document Copier\Fast Document Copier\obj\Debug\Fast Document Copier.exe
+C:\Users\Soumyadeep Ghosh\Google Drive\Fast Document Copier\Fast Document Copier\obj\Debug\Fast Document Copier.pdb
+C:\Users\Soumyadeep Ghosh\Google Drive\Fast Document Copier\Fast Document Copier\obj\Debug\Fast_Document_Copier.ConfirmingDialogBox.resources
