@@ -63,6 +63,15 @@
             this.jPEGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pNGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bMPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resolutionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deviceInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.letterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -290,7 +299,9 @@
             // 
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingsToolStripMenuItem});
+            this.settingsToolStripMenuItem,
+            this.resolutionToolStripMenuItem,
+            this.debugToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 592);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(698, 24);
@@ -321,7 +332,7 @@
             this.createNewDirectoryIfExistsToolStripMenuItem.Checked = true;
             this.createNewDirectoryIfExistsToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.createNewDirectoryIfExistsToolStripMenuItem.Name = "createNewDirectoryIfExistsToolStripMenuItem";
-            this.createNewDirectoryIfExistsToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
+            this.createNewDirectoryIfExistsToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.createNewDirectoryIfExistsToolStripMenuItem.Text = "Create New Directory if Exists";
             // 
             // pDFSettingsToolStripMenuItem
@@ -343,9 +354,10 @@
             // pageSizeToolStripMenuItem
             // 
             this.pageSizeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.a4ToolStripMenuItem});
+            this.a4ToolStripMenuItem,
+            this.letterToolStripMenuItem});
             this.pageSizeToolStripMenuItem.Name = "pageSizeToolStripMenuItem";
-            this.pageSizeToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.pageSizeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pageSizeToolStripMenuItem.Text = "Page Size";
             // 
             // a4ToolStripMenuItem
@@ -353,8 +365,9 @@
             this.a4ToolStripMenuItem.Checked = true;
             this.a4ToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.a4ToolStripMenuItem.Name = "a4ToolStripMenuItem";
-            this.a4ToolStripMenuItem.Size = new System.Drawing.Size(88, 22);
+            this.a4ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.a4ToolStripMenuItem.Text = "A4";
+            this.a4ToolStripMenuItem.Click += new System.EventHandler(this.a4ToolStripMenuItem_Click);
             // 
             // saveSettingsToolStripMenuItem
             // 
@@ -388,6 +401,78 @@
             this.bMPToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
             this.bMPToolStripMenuItem.Text = "BMP";
             this.bMPToolStripMenuItem.Click += new System.EventHandler(this.bMPToolStripMenuItem_Click);
+            // 
+            // resolutionToolStripMenuItem
+            // 
+            this.resolutionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem6,
+            this.toolStripMenuItem5,
+            this.toolStripMenuItem4,
+            this.toolStripMenuItem3,
+            this.toolStripMenuItem2});
+            this.resolutionToolStripMenuItem.Name = "resolutionToolStripMenuItem";
+            this.resolutionToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.resolutionToolStripMenuItem.Text = "Resolution";
+            // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem6.Text = "1200";
+            this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            this.toolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem5.Text = "600";
+            this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem4.Text = "300";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Checked = true;
+            this.toolStripMenuItem3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem3.Text = "200";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Text = "100";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
+            // debugToolStripMenuItem
+            // 
+            this.debugToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deviceInfoToolStripMenuItem});
+            this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
+            this.debugToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.debugToolStripMenuItem.Text = "Debug";
+            // 
+            // deviceInfoToolStripMenuItem
+            // 
+            this.deviceInfoToolStripMenuItem.Name = "deviceInfoToolStripMenuItem";
+            this.deviceInfoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deviceInfoToolStripMenuItem.Text = "Device Info";
+            this.deviceInfoToolStripMenuItem.Click += new System.EventHandler(this.deviceInfoToolStripMenuItem_Click);
+            // 
+            // letterToolStripMenuItem
+            // 
+            this.letterToolStripMenuItem.Enabled = false;
+            this.letterToolStripMenuItem.Name = "letterToolStripMenuItem";
+            this.letterToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.letterToolStripMenuItem.Text = "Letter";
+            this.letterToolStripMenuItem.Click += new System.EventHandler(this.letterToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -463,6 +548,15 @@
         private System.Windows.Forms.ToolStripMenuItem keepScannedImageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem directorySettingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createNewDirectoryIfExistsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem resolutionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deviceInfoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem letterToolStripMenuItem;
     }
 }
 

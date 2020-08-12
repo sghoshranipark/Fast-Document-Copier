@@ -22,3 +22,20 @@ C:\Users\Soumyadeep Ghosh\Google Drive\VSProject\Fast Document Copier\Fast Docum
 C:\Users\Soumyadeep Ghosh\Google Drive\VSProject\Fast Document Copier\Fast Document Copier\obj\Debug\Fast Document Copier.csproj.CopyComplete
 C:\Users\Soumyadeep Ghosh\Google Drive\VSProject\Fast Document Copier\Fast Document Copier\obj\Debug\Fast Document Copier.exe
 C:\Users\Soumyadeep Ghosh\Google Drive\VSProject\Fast Document Copier\Fast Document Copier\obj\Debug\Fast Document Copier.pdb
+C:\Users\ghosh\Google Drive\VSProject\Fast Document Copier\Fast Document Copier\bin\Debug\Fast Document Copier.exe.config
+C:\Users\ghosh\Google Drive\VSProject\Fast Document Copier\Fast Document Copier\bin\Debug\Fast Document Copier.exe
+C:\Users\ghosh\Google Drive\VSProject\Fast Document Copier\Fast Document Copier\bin\Debug\Fast Document Copier.pdb
+C:\Users\ghosh\Google Drive\VSProject\Fast Document Copier\Fast Document Copier\bin\Debug\itextsharp.dll
+C:\Users\ghosh\Google Drive\VSProject\Fast Document Copier\Fast Document Copier\bin\Debug\itextsharp.xml
+C:\Users\ghosh\Google Drive\VSProject\Fast Document Copier\Fast Document Copier\obj\Debug\Fast Document Copier.csprojAssemblyReference.cache
+C:\Users\ghosh\Google Drive\VSProject\Fast Document Copier\Fast Document Copier\obj\Debug\Fast_Document_Copier.ConfirmingDialogBox.resources
+C:\Users\ghosh\Google Drive\VSProject\Fast Document Copier\Fast Document Copier\obj\Debug\Fast_Document_Copier.Form1.resources
+C:\Users\ghosh\Google Drive\VSProject\Fast Document Copier\Fast Document Copier\obj\Debug\Fast_Document_Copier.Properties.Resources.resources
+C:\Users\ghosh\Google Drive\VSProject\Fast Document Copier\Fast Document Copier\obj\Debug\Fast Document Copier.csproj.GenerateResource.cache
+C:\Users\ghosh\Google Drive\VSProject\Fast Document Copier\Fast Document Copier\obj\Debug\Fast Document Copier.csproj.CoreCompileInputs.cache
+C:\Users\ghosh\Google Drive\VSProject\Fast Document Copier\Fast Document Copier\obj\Debug\Fast Document Copier.csproj.CopyComplete
+C:\Users\ghosh\Google Drive\VSProject\Fast Document Copier\Fast Document Copier\obj\Debug\Fast Document Copier.exe
+C:\Users\ghosh\Google Drive\VSProject\Fast Document Copier\Fast Document Copier\obj\Debug\Fast Document Copier.pdb
+C:\Users\ghosh\Google Drive\VSProject\Fast Document Copier\Fast Document Copier\obj\Debug\Interop.WIA.dll
+C:\Users\ghosh\Google Drive\VSProject\Fast Document Copier\Fast Document Copier\obj\Debug\Fast Document Copier.csproj.ResolveComReference.cache
+C:\Users\ghosh\Google Drive\VSProject\Fast Document Copier\Fast Document Copier\bin\Debug\Interop.WIA.dll

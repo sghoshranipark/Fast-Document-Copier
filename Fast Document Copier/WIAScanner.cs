@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using WIA;
 
 class WIAScanner
 {
@@ -35,8 +36,7 @@ class WIAScanner
     public static List<Image> Scan()
     {
         WIA.ICommonDialog dialog = new WIA.CommonDialog();
-        WIA.Device device = dialog.ShowSelectDevice
-            (WIA.WiaDeviceType.UnspecifiedDeviceType, true, false);
+        WIA.Device device = dialog.ShowSelectDevice(WIA.WiaDeviceType.UnspecifiedDeviceType, true, false);
         if (device != null)
         {
             return Scan(device.DeviceID);
@@ -52,6 +52,14 @@ class WIAScanner
     /// <param name="scannerName"></param>
     /// <returns>Scanned images.</returns>
     public static List<Image> Scan(string scannerId)
+    {
+        return Scan(scannerId, 300, 0);
+    }
+    public static List<Image> Scan(string scannerId, int resolution)
+    {
+        return Scan(scannerId, resolution, 1);
+    }
+        public static List<Image> Scan(string scannerId,int resolution,int size)
     {
         List<Image> images = new List<Image>();
         bool hasMorePages = true;
@@ -80,12 +88,15 @@ class WIAScanner
                 }
                 // show error with available devices
                 throw new Exception("The device with provided ID could not be found. Available Devices:\n" + availableDevices);
-                }
+            }
             WIA.Item item = device.Items[1] as WIA.Item;
             try
             {
                 // scan image
                 WIA.ICommonDialog wiaCommonDialog = new WIA.CommonDialog();
+                item.Properties["6147"].set_Value(resolution);
+                item.Properties["6148"].set_Value(resolution);
+
                 WIA.ImageFile image = (WIA.ImageFile)wiaCommonDialog.ShowTransfer(item, wiaFormatBMP, false);
                 // save to temp file
                 string fileName = Path.GetTempFileName();
@@ -118,8 +129,7 @@ class WIAScanner
                 if (documentHandlingSelect != null)
                 {
                     // check for document feeder
-                    if ((Convert.ToUInt32(documentHandlingSelect.get_Value()) &
-                    WIA_DPS_DOCUMENT_HANDLING_SELECT.FEEDER) != 0)
+                    if ((Convert.ToUInt32(documentHandlingSelect.get_Value()) & WIA_DPS_DOCUMENT_HANDLING_SELECT.FEEDER) != 0)
                     {
                         hasMorePages = ((Convert.ToUInt32(documentHandlingStatus.get_Value()) &
                         WIA_DPS_DOCUMENT_HANDLING_STATUS.FEED_READY) != 0);

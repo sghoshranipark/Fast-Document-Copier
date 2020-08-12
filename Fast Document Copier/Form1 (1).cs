@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using WIA;
 
 namespace Fast_Document_Copier
 {
@@ -19,6 +15,7 @@ namespace Fast_Document_Copier
     {
         int currentRotation = 0;
         ArrayList arImage = new ArrayList();
+        int resolution = 200,type=0;
         public Form1()
         {
             InitializeComponent();
@@ -40,7 +37,7 @@ namespace Fast_Document_Copier
                 if (textBox1.Text.Length == 0)
                 {
                     //get images from scanner
-                    List<System.Drawing.Image> images = WIAScanner.Scan((string)comboBox1.SelectedItem);
+                    List<System.Drawing.Image> images = WIAScanner.Scan((string)comboBox1.SelectedItem,resolution,type);
                     foreach (System.Drawing.Image image in images)
                     {
                         pictureBox1.Image = image;
@@ -79,7 +76,7 @@ namespace Fast_Document_Copier
                             {
                                 try
                                 {
-                                    List<System.Drawing.Image> images = WIAScanner.Scan((string)comboBox1.SelectedItem);
+                                    List<System.Drawing.Image> images = WIAScanner.Scan((string)comboBox1.SelectedItem,resolution,type);
                                     foreach (System.Drawing.Image image in images)
                                     {
                                         rotate(image);
@@ -107,7 +104,7 @@ namespace Fast_Document_Copier
                         int n = int.Parse(textBox2.Text);
                         if (n == 1)
                         {
-                            List<System.Drawing.Image> images = WIAScanner.Scan((string)comboBox1.SelectedItem);
+                            List<System.Drawing.Image> images = WIAScanner.Scan((string)comboBox1.SelectedItem,resolution,type);
                             foreach (System.Drawing.Image image in images)
                             {
                                 pictureBox1.Image = image;
@@ -147,7 +144,7 @@ namespace Fast_Document_Copier
                                 cdb.ShowDialog();
                                 if (cdb.status == 1)
                                 {
-                                    List<System.Drawing.Image> images = WIAScanner.Scan((string)comboBox1.SelectedItem);
+                                    List<System.Drawing.Image> images = WIAScanner.Scan((string)comboBox1.SelectedItem,resolution,type);
                                     foreach (System.Drawing.Image image in images)
                                     {
                                         rotate(image);
@@ -243,8 +240,8 @@ namespace Fast_Document_Copier
         }
 
         private void button5_Click(object sender, EventArgs e)
-        {
-            List<System.Drawing.Image> images = WIAScanner.Scan((string)comboBox1.SelectedItem);
+        {        
+            List<System.Drawing.Image> images = WIAScanner.Scan((string)comboBox1.SelectedItem,100,type);
             foreach (System.Drawing.Image image in images)
             {
                 pictureBox2.Image = rotate(image);
@@ -362,6 +359,74 @@ namespace Fast_Document_Copier
         private void pictureBox2_MouseMove(object sender, MouseEventArgs e)
         {
             //Shrink grow filter to the needs
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Reset();
+            toolStripMenuItem2.Checked = true;
+            resolution = 100;
+        }
+        private void Reset()
+        {
+            toolStripMenuItem2.Checked = false;
+            toolStripMenuItem3.Checked = false;
+            toolStripMenuItem4.Checked = false;
+            toolStripMenuItem5.Checked = false;
+            toolStripMenuItem6.Checked = false;
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            Reset();
+            toolStripMenuItem3.Checked = true;
+            resolution = 200;
+        }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            Reset();
+            toolStripMenuItem4.Checked = true;
+            resolution = 300;
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            Reset();
+            toolStripMenuItem5.Checked = true;
+            resolution = 600;
+        }
+
+        private void toolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            Reset();
+            toolStripMenuItem6.Checked = true;
+            resolution = 1200;
+        }
+
+        private void deviceInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WIA.ICommonDialog commonDialogClass = new WIA.CommonDialog();
+            Device scannerDevice = commonDialogClass.ShowSelectDevice(WiaDeviceType.ScannerDeviceType, false, false);
+            Item scannnerItem = scannerDevice.Items[1];
+            String str = "";
+            foreach (Property prop in scannnerItem.Properties)
+                str += "\n" + prop.Name + " " + prop.PropertyID + " " + prop.get_Value();
+            MessageBox.Show(str,"Device Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
+        }
+
+        private void a4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            letterToolStripMenuItem.Checked = false;
+            a4ToolStripMenuItem.Checked = true;
+            type = 0;
+        }
+
+        private void letterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            letterToolStripMenuItem.Checked = true;
+            a4ToolStripMenuItem.Checked = false;
+            type = 1;
         }
     }
 }
